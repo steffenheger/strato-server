@@ -9,8 +9,8 @@ services:
     depends_on:
       - vinoso24
     volumes:
-      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
-      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+      - /srv/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - /srv/nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
       # - /srv/certs/nginx-selfsigned.crt:/etc/nginx/ssl/nginx-selfsigned.crt
       # - /srv/certs/nginx-selfsigned.key:/etc/nginx/ssl/nginx-selfsigned.key
       # - ./certbot/www/:/var/www/certbot/:ro
