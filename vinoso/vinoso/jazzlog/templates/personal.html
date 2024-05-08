@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Vinoso</title>
+    <link rel="stylesheet" href="{% static 'jazzlog/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'jazzlog/css/vinoso.css' %}">
+</head>
+<body>
+{% include 'navbar.html' %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                  <div style="padding-top: 40px; padding-bottom: 40px;">
+                    <h1>Claudio Pezzatini</h1>
+                    <p>
+                        berät Sie als Inhaber der Vinothek Vinoso gerne zu allen Fragen rund um italienische Weine.
+                    </p>
+                  </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-body">
+                  <div style="align-items: center;">
+                    <img width="65%" height="65%" src="{% static 'jazzlog/img/claudio.jpeg' %}" alt="Claudio">
+                  </div>
+                </div>
+            </div>
+        <div class="col-md-2"></div>
+    </div>
+</div>
+
+{% include 'footer.html' %}
+</body>
+</html>

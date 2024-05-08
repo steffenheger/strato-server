@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Vinoso</title>
+    <link rel="stylesheet" href="{% static 'jazzlog/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'jazzlog/css/vinoso.css' %}">
+</head>
+<body>
+{% include 'navbar.html' %}
+
+<div class="container">
+    <div class="row">
+        <div class=col-md-12>
+            <h1>Impressum</h1>
+<b>Diese Internetseite wird angeboten von:</b><br><br>
+VINOSO<br>
+Moosbergstraße 49<br>64285 Darmstadt<br>
++49 177 899 13 02<br><br>
+vertreten durch Claudio Pezzatini.
+        </div>
+    </div>
+</div>
+
+{% include 'footer.html' %}
+</body>
+</html>
+

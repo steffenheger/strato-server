@@ -1,0 +1,112 @@
+h1, h3 {
+    font-size: 20;
+    color: #6c0c3a;
+}
+
+h2 {
+    color: #000000;
+}
+
+.status_inactiv {
+    background-color: #c0c4b2;
+    width: 400px;
+    display: table-cell;
+    text-align: center;
+    border: 1px solid #fff
+}
+
+.status_activ {
+    background-color: #969c7e;
+    color: #ffffff;
+    width: 400px;
+    display: table-cell;
+    text-align: center;
+    border: 1px solid #fff
+}
+
+.status_bar {
+    margin-top: 120px;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-bottom: -40px;
+    padding-left: 40px
+}
+
+.main_frame {
+    padding: 40px;
+    margin: 40px;
+    border: 1px solid #ccc
+}
+
+.nav-logo {
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+.nav-tile {
+    align-content: last-baseline;
+}
+
+.navbar-expand-lg {
+    background-color: #6c0c3a;
+    border-color: #E7E7E7;
+}
+
+.navbar-default {
+    padding: 40px;
+    background-color: #6c0c3a;
+    border-color: #E7E7E7;
+}
+
+.navbar-expand-lg .nav-link {
+    color: #fff;
+}
+
+/* Title */
+.navbar-default .navbar-brand {
+    color: #fff;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+    color: #5E5E5E;
+}
+/* Link */
+.navbar-default .navbar-nav > li > a {
+    color: #fff;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    color: #333;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+    color: #555;
+    background-color: #E7E7E7;
+}
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+    color: #555;
+    background-color: #D5D5D5;
+}
+
+.panel-content {
+    margin-top: 25px;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #6c0c3a;
+  color: white;
+  text-align: center;
+}
+
+.popover {
+  position: absolute;
+  z-index: 100;
+}
+

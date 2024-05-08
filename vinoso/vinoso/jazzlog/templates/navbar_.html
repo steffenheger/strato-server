@@ -1,0 +1,33 @@
+{% load static %}
+<header>
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/jazz">
+                    <div class="nav-logo">
+                        <img width="20%" height="20%" src="{% static 'jazzlog/img/logo.png' %}" />
+                    </div>
+                </a>
+            </div>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/jazz/index">Home</a></li>
+                <li><a href="/jazz/shop">Laden</a></li>
+                <li><a href="/jazz/products">Produkte</a></li>
+                <li><a href="/jazz/personal">Persönliches</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Dropdown
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="#">Action</a>
+                      <a class="dropdown-item" href="#">Another action</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                  </li>
+                <li><a href="/jazz">Persönliches</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>

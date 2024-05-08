@@ -1,0 +1,35 @@
+version: '3'
+
+services:
+
+  # Proxies requests to internal services
+  reverse-proxy:
+    image: nginx:stable-alpine-slim
+    container_name: nginx-reverse-proxy
+    depends_on:
+      - vinoso24
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+      # - /srv/certs/nginx-selfsigned.crt:/etc/nginx/ssl/nginx-selfsigned.crt
+      # - /srv/certs/nginx-selfsigned.key:/etc/nginx/ssl/nginx-selfsigned.key
+      # - ./certbot/www/:/var/www/certbot/:ro
+      # - /etc/letsencrypt:/etc/letsencrypt:ro
+      # - /tmp/acme_challenge:/tmp/acme_challenge
+    ports:
+      - 80:80
+      - 443:443
+
+  vinoso24:
+    image: vinoso:latest
+    container_name: vinoso24
+    build:
+      context: /srv/vinoso
+    ports:
+      - 8000:8000
+    restart: on-failure
+  # certbot:
+  #   image: certbot/certbot:latest
+  #   volumes:
+  #     - ./certbot/www/:/var/www/certbot/:rw
+  #     - ./certbot/conf/:/etc/letsencrypt/:rw
