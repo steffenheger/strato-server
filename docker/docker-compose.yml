@@ -11,9 +11,9 @@ services:
     volumes:
       - /srv/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
       - /srv/nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
-      # - /srv/certs/nginx-selfsigned.crt:/etc/nginx/ssl/nginx-selfsigned.crt
-      # - /srv/certs/nginx-selfsigned.key:/etc/nginx/ssl/nginx-selfsigned.key
-      # - ./certbot/www/:/var/www/certbot/:ro
+      - /srv/certs/nginx-selfsigned.crt:/etc/nginx/ssl/nginx-selfsigned.crt
+      - /srv/certs/nginx-selfsigned.key:/etc/nginx/ssl/nginx-selfsigned.key
+      - /srv/certbot/www/:/var/www/certbot/:ro
       # - /etc/letsencrypt:/etc/letsencrypt:ro
       # - /tmp/acme_challenge:/tmp/acme_challenge
     ports:
@@ -28,8 +28,8 @@ services:
     ports:
       - 8000:8000
     restart: on-failure
-  # certbot:
-  #   image: certbot/certbot:latest
-  #   volumes:
-  #     - ./certbot/www/:/var/www/certbot/:rw
-  #     - ./certbot/conf/:/etc/letsencrypt/:rw
+  certbot:
+    image: certbot/certbot:latest
+    volumes:
+      - /srv/certbot/www/:/var/www/certbot/:rw
+      - /srv/certbot/conf/:/etc/letsencrypt/:rw
