@@ -6,7 +6,9 @@ services:
     command: sh -c "certbot certonly --dry-run --expand --webroot -w /tmp/acme_challenge -d vinoso24.de --text --agree-tos --email steffen.heger@gmail.com --rsa-key-size 4096 --verbose --keep-until-expiring --preferred-challenges=http"
     entrypoint: ""
     volumes:
-      - "/etc/letsencrypt:/etc/letsencrypt"
-      - "/tmp/acme_challenge:/tmp/acme_challenge"
+      # - /etc/letsencrypt:/etc/letsencrypt
+      # - /tmp/acme_challenge:/tmp/acme_challenge
+      - /srv/certbot/www/:/var/www/certbot/:rw
+      - /srv/certbot/conf/:/etc/letsencrypt/:rw
     environment:
       - TERM=xterm
