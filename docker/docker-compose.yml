@@ -16,13 +16,13 @@ services:
     ports:
       - 80:80
       - 443:443
-  vinoso24:
-    image: vinoso:latest
-    container_name: vinoso24
-    build:
-      context: /srv/vinoso
-    ports:
-      - 8000:8000
+    # vinoso24:
+    #   image: vinoso:latest
+    #   container_name: vinoso24
+    #   build:
+    #     context: /srv/vinoso
+    #   ports:
+    #     - 8000:8000
     restart: on-failure
   letsencrypt:
     container_name: 'certbot-service'
