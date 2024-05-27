@@ -16,6 +16,9 @@ services:
     container_name: certbot
     image: certbot/certbot:latest
     command: sh -c "certbot certonly --dry-run --expand --webroot -w /tmp/acme_challenge -d vinoso24.de --text --agree-tos --email steffen.heger@gmail.com --rsa-key-size 4096 --verbose --keep-until-expiring --preferred-challenges=http"
+    entrypoint: ""
+    environment:
+      - TERM=xterm
     volumes:
       - /srv/certbot/conf/:/etc/letsencrypt/:rw
       - /srv/certbot/www/:/var/www/certbot/:rw
