@@ -24,6 +24,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("jazz/", include("jazzlog.urls")),
     path("", include("shop.urls")),
+    # path('.well-known/acme-challenge'),
 ]
 
 # if settings.DEBUG:
