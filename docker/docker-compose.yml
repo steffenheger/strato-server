@@ -10,6 +10,8 @@ services:
       - /srv/nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
       - /srv/certbot/conf:/etc/letsencrypt/:rw
       - /srv/certbot/www:/var/www/certbot/:rw
+      - /srv/certs/nginx-selfsigned.crt:/etc/nginx/ssl/nginx-selfsigned.crt
+      - /srv/certs/nginx-selfsigned.key:/etc/nginx/ssl/nginx-selfsigned.key
   certbot:
     container_name: certbot
     image: certbot/certbot:latest
