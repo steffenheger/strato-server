@@ -11,8 +11,8 @@ services:
       - /srv/certs/nginx-selfsigned.crt:/etc/nginx/ssl/nginx-selfsigned.crt
       - /srv/certs/nginx-selfsigned.key:/etc/nginx/ssl/nginx-selfsigned.key
       - /srv/certbot/www/:/var/www/certbot/:ro
-      # - /etc/letsencrypt:/etc/letsencrypt:ro
-      # - /tmp/acme_challenge:/tmp/acme_challenge
+      - /etc/letsencrypt:/etc/letsencrypt:ro
+      - /tmp/acme_challenge:/tmp/acme_challenge
     ports:
       - 80:80
       - 443:443
