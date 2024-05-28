@@ -18,7 +18,8 @@ services:
     image: certbot/certbot:latest
     depends_on:
       - reverse-proxy
-    command: sh -c "certbot certonly --dry-run --expand --webroot -w /tmp/acme_challenge -d vinoso24.de --text --agree-tos --email steffen.heger@gmail.com --rsa-key-size 4096 --verbose --keep-until-expiring --preferred-challenges=http"
+    # command: sh -c "certbot certonly --dry-run --expand --webroot -w /tmp/acme_challenge -d vinoso24.de --text --agree-tos --email steffen.heger@gmail.com --rsa-key-size 4096 --verbose --keep-until-expiring --preferred-challenges=http"
+    command: sh -c "certbot certonly --expand --webroot -w /tmp/acme_challenge -d vinoso24.de --text --agree-tos --email steffen.heger@gmail.com --rsa-key-size 4096 --verbose --keep-until-expiring --preferred-challenges=http"
     entrypoint: ""
     environment:
       - TERM=xterm
@@ -26,3 +27,11 @@ services:
       - /srv/certbot/conf/:/etc/letsencrypt/:rw
       - /srv/certbot/www/:/var/www/certbot/:rw
       - /tmp/acme_challenge:/tmp/acme_challenge
+  vinoso24:
+      image: vinoso:latest
+      container_name: vinoso24
+      build:
+        context: /srv/vinoso
+      ports:
+        - 8000:8000
+    restart: on-failure
