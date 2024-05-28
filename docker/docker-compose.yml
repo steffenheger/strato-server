@@ -28,10 +28,10 @@ services:
       - /srv/certbot/www/:/var/www/certbot/:rw
       - /tmp/acme_challenge:/tmp/acme_challenge
   vinoso24:
-      image: vinoso:latest
-      container_name: vinoso24
-      build:
-        context: /srv/vinoso
-      ports:
-        - 8000:8000
+    image: vinoso:latest
+    container_name: vinoso24
+    build:
+      context: /srv/vinoso
+    ports:
+      - 8000:8000
     restart: on-failure
