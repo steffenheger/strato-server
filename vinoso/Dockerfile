@@ -18,4 +18,4 @@ COPY ./vinoso /usr/src/app
 
 EXPOSE 8000
 
-CMD ["gunicorn --bind 0.0.0.0:8000 /usr/src/app/vinoso/wsgi.py"]
+# CMD ["gunicorn --bind 0.0.0.0:8000 /usr/src/app/vinoso/wsgi.py"]
