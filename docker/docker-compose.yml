@@ -26,6 +26,7 @@ services:
   #   image: certbot/certbot:latest
   #   depends_on:
   #     - reverse-proxy
+  #     - vinoso24
   #   command: sh -c "certbot certonly --expand --webroot -w /tmp/acme_challenge -d vinoso24.de --text --agree-tos --email steffen.heger@gmail.com --rsa-key-size 4096 --verbose --keep-until-expiring --preferred-challenges=http"
   #   entrypoint: ""
   #   environment:
