@@ -13,6 +13,7 @@ services:
       - /srv/certs/nginx-selfsigned.crt:/etc/nginx/ssl/nginx-selfsigned.crt
       - /srv/certs/nginx-selfsigned.key:/etc/nginx/ssl/nginx-selfsigned.key
       - /tmp/acme_challenge:/tmp/acme_challenge
+      - /srv/static:/var/www/static/:r
   vinoso24:
     image: vinoso:latest
     container_name: vinoso24
@@ -21,6 +22,8 @@ services:
     command: gunicorn vinoso.wsgi:application --bind 0.0.0.0:8000
     ports:
       - 8000:8000
+    volumes:
+      - /srv/static:/usr/src/app/static/:r
     restart: on-failure
   # certbot:
   #   container_name: certbot
