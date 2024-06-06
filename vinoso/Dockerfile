@@ -17,6 +17,3 @@ RUN pip install -r requirements.txt
 COPY ./vinoso /usr/src/app
 
 EXPOSE 8000
-
-CMD ["gunicorn", "bind 0.0.0.0:8000", "vinoso.wsgi:application"]
-# CMD ["gunicorn", "vinoso.wsgi:application", "--bind 0.0.0.0:8000"]
