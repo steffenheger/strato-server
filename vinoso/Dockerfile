@@ -13,6 +13,6 @@ RUN python3 -m pip install --upgrade pip
 COPY ./requirements.txt /usr/src/app
 RUN pip install -r requirements.txt
 
-COPY /srv/vinoso/vinoso/ /usr/src/app
+COPY ./vinoso/ /usr/src/app
 
 EXPOSE 8000
