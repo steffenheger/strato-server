@@ -8,19 +8,18 @@ services:
     volumes:
       - /srv/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
       - /srv/nginx/default.conf:/etc/nginx/conf.d/default.conf:rw
-      - /srv/certbot/conf:/etc/letsencrypt/:rw
-      - /srv/certbot/www:/var/www/certbot/:rw
+      - /srv/vinoso/vinoso/static:/var/www/static/:ro
       - /srv/certs/nginx-selfsigned.crt:/etc/nginx/ssl/nginx-selfsigned.crt
       - /srv/certs/nginx-selfsigned.key:/etc/nginx/ssl/nginx-selfsigned.key
+      - /srv/certbot/conf:/etc/letsencrypt/:rw
+      - /srv/certbot/www:/var/www/certbot/:rw
       - /tmp/acme_challenge:/tmp/acme_challenge
-      - /srv/vinoso/vinoso/static:/var/www/static/:ro
   vinoso24:
     image: vinoso:latest
     container_name: vinoso24
     build:
       context: /srv/vinoso
     command: gunicorn vinoso.wsgi:application --bind 0.0.0.0:8000
-    # command: python manage.py runserver 0.0.0.0:8000
     ports:
       - 8000:8000
     volumes:
